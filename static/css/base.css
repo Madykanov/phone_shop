@@ -1,0 +1,197 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        /* align-items: center; */
+        align-self: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 19px;
+        padding: 20px;
+    }
+
+    .row .block {
+        width: 350px;
+        height: 350px;
+        background-color: rgba(47, 131, 176, 0.321);
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+        transition: 0.4s;
+    }
+
+    .row .block:hover {
+        /*  background-color: rgb(229, 6, 6); */
+        transition: 0.4s;
+        transform: scale(1.05, 1.05);
+        box-shadow: 2px 2px 10px 2px black;
+        background-color: rgba(213, 56, 20, 0.581);
+    }
+
+
+    .row .block .image {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding: 0; */
+    }
+
+    .row .block .image .bg_color {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.54);
+    }
+
+    .row .block .image .bg_color>.center_text {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .row .block:hover .image>.bg_color {
+        top: 0%;
+        transition: 0.5s ease-in;
+    }
+
+    .row .block:hover .image>img {
+        width: 80%;
+        transition: 0.5s ease-in;
+
+    }
+
+    .row .block .image img {
+        width: 60%;
+    }
+
+    .row .block .image .text {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: rgba(205, 178, 178, 0.444);
+        color: black;
+    }
+
+
+    .row .block .image .bg_color>.center_text a {
+        color: orange;
+        text-decoration: none;
+        border: 1px solid orange;
+        padding: 11px 14px;
+        border-radius: 7px;
+    }
+
+    .row .block .image .bg_color>.center_text a:active {
+        background-color: bisque;
+        color: orange;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .rowbek {
+        /* width: 100%; */
+        /* height: 500px; */
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+    }
+
+    .rowbek .block {
+        width: 900px;
+        height: 100%;
+        background-color: rgb(158, 165, 169);
+        border-radius: 10px;
+        transition: 0.4s;
+        display: flex;
+    }
+
+    .mini_block1 {
+        border-radius: 10px 0px 0px 10px;
+        width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mini_block1 img {
+        width: 280px;
+        /* height: 280px; */
+    }
+
+    .mini_block2 {
+        width: 70%;
+        padding: 30px;
+    }
+
+    .add {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .addtocart {
+        font-size: larger;
+        font-weight: 800;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 10px;
+        background-color: rgba(210, 50, 42, 0.819);
+        margin-top: 10px;
+        border-radius: 5px;
+        display: inline-block;
+        color: white;
+        box-shadow: 0px 0px 7px 1px rgba(210, 50, 42, 0.819);
+    }
+
+    .addtocart:hover {
+        background-color: brown;
+        color: rgb(186, 182, 182);
+    }
+
+    @media(max-width:1000px) {
+        .rowbek .block {
+            /* display: none; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* position: relative; */
+        }
+
+        .rowbek .image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .mini_block2 {
+            width: 100%;
+        }
+
+    }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <!---<title> Responsive Registration Form | CodingLab </title>--->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/register.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+  .back {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .back a {
+    color: rgb(9, 56, 225);
+    text-decoration: none;
+    /* font-size: 18px; */
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="" method="POST">
+        {% csrf_token %}
+
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="username" placeholder="Enter your username" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input type="password"  name="password1" placeholder="Enter your password" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              <input type="password"  name="password2" placeholder="Confirm your password" required>
+            </div>
+        </div>
+              {% if messages %}
+                    {% for i in messages %}
+                        <p style="color:red; font-size: larger;">{{ i }}</p>
+                    {% endfor %}
+                {% endif %}
+        <div class="button">
+          <input type="submit" value="Register">
+
+          <div class="back"><a href="{{request.META.HTTP_REFERER}}">Go back</a></div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</body>
+</html>
